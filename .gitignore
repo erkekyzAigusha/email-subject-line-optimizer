@@ -1,0 +1,149 @@
+# ─────────────────────────────────────────────
+#  Email Subject Line Optimizer — .gitignore
+# ─────────────────────────────────────────────
+
+# ══════════════════════════════════════════════
+# PYTHON / DJANGO  (backend/)
+# ══════════════════════════════════════════════
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env_backup
+
+# Environment secrets  ← NEVER commit this
+backend/.env
+
+# Django collected static / media
+backend/staticfiles/
+backend/media/
+static/
+
+# Django migrations (keep these in git — they're part of the schema)
+# backend/core/migrations/*  ← intentionally NOT ignored
+
+# Coverage & test artifacts
+.coverage
+htmlcov/
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Logs
+*.log
+django_debug.log
+
+# ══════════════════════════════════════════════
+# NODE / REACT / VITE  (frontend/)
+# ══════════════════════════════════════════════
+
+# Dependencies
+frontend/node_modules/
+node_modules/
+
+# Production build output
+frontend/dist/
+frontend/build/
+
+# Vite cache
+frontend/.vite/
+
+# Environment secrets (frontend, if ever used)
+frontend/.env
+frontend/.env.local
+frontend/.env.production
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# ESLint / Prettier cache
+.eslintcache
+.prettiercache
+
+# ══════════════════════════════════════════════
+# DATABASE / DOCKER
+# ══════════════════════════════════════════════
+
+# Docker volumes (data persisted outside repo)
+postgres_data/
+
+# Docker override files with local secrets
+docker-compose.override.yml
+
+# ══════════════════════════════════════════════
+# IDEs & EDITORS
+# ══════════════════════════════════════════════
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains (PyCharm, WebStorm, etc.)
+.idea/
+*.iml
+*.iws
+
+# Vim / Neovim
+*.swp
+*.swo
+Session.vim
+
+# Emacs
+*~
+\#*\#
+
+# ══════════════════════════════════════════════
+# OS FILES
+# ══════════════════════════════════════════════
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ══════════════════════════════════════════════
+# MISC
+# ══════════════════════════════════════════════
+
+# AI tool configs (local)
+.claude/
+.gemini/
+.cursor/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Secrets / certificates
+*.pem
+*.key
+*.crt
+*.p12
+secrets/

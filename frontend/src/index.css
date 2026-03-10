@@ -1,0 +1,276 @@
+@import "tailwindcss";
+
+@theme {
+  --color-kings-plum: #AD117E;
+  --color-pastel-magenta: #D385DF;
+  --color-thistle: #DEC0E8;
+  --color-snow: #F5EEF2;
+  --color-soothing-lime: #D6E574;
+}
+
+/* ── Glassmorphism Utilities ─────────────────────────────────────── */
+/* Written as vanilla CSS to be compatible with Tailwind CSS v4      */
+
+.glass {
+  background-color: rgba(245, 238, 242, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 238, 242, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(173, 17, 126, 0.12);
+}
+
+.glass-card {
+  background-color: rgba(245, 238, 242, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 238, 242, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(173, 17, 126, 0.12);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.glass-input {
+  background-color: rgba(245, 238, 242, 0.5);
+  border: 1px solid rgba(245, 238, 242, 0.8);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #1e293b;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  width: 100%;
+  outline: none;
+}
+
+.glass-input::placeholder {
+  color: #64748b;
+}
+
+.glass-input:focus {
+  box-shadow: 0 0 0 2px rgba(173, 17, 126, 0.4);
+  border-color: rgba(173, 17, 126, 0.4);
+  background-color: rgba(245, 238, 242, 0.7);
+}
+
+.glass-button {
+  background-color: #AD117E;
+  color: #F5EEF2;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.glass-button:hover {
+  background-color: rgba(173, 17, 126, 0.9);
+  box-shadow: 0 8px 20px rgba(173, 17, 126, 0.3);
+}
+
+.glass-button:active {
+  transform: scale(0.95);
+}
+
+.glass-button-secondary {
+  background-color: rgba(245, 238, 242, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 238, 242, 0.6);
+  color: #AD117E;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.glass-button-secondary:hover {
+  background-color: rgba(245, 238, 242, 0.6);
+  box-shadow: 0 8px 20px rgba(173, 17, 126, 0.1);
+}
+
+/* ── Global Styles ────────────────────────────────────────────────── */
+
+body {
+  background: linear-gradient(135deg, #DEC0E8 0%, #F5EEF2 50%, rgba(211, 133, 223, 0.3) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Custom Scrollbar ─────────────────────────────────────────────── */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(173, 17, 126, 0.3);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(173, 17, 126, 0.5);
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   AI Markdown Content Styles
+   Used on .ai-markdown - applied in Chat bubbles and Campaign AI output.
+   Hand-crafted to avoid @tailwindcss/typography dependency issues.
+───────────────────────────────────────────────────────────────────── */
+
+.ai-markdown {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: #1e293b;
+}
+
+.ai-markdown h1,
+.ai-markdown h2,
+.ai-markdown h3 {
+  font-weight: 700;
+  color: #AD117E;
+  line-height: 1.3;
+  margin-top: 1.1em;
+  margin-bottom: 0.4em;
+}
+
+.ai-markdown>h1:first-child,
+.ai-markdown>h2:first-child,
+.ai-markdown>h3:first-child {
+  margin-top: 0;
+}
+
+.ai-markdown h1 {
+  font-size: 1.15rem;
+}
+
+.ai-markdown h2 {
+  font-size: 1.05rem;
+}
+
+.ai-markdown h3 {
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(173, 17, 126, 0.15);
+  padding-bottom: 0.2em;
+}
+
+.ai-markdown p {
+  margin-bottom: 0.7em;
+}
+
+.ai-markdown p:last-child {
+  margin-bottom: 0;
+}
+
+.ai-markdown ul,
+.ai-markdown ol {
+  margin: 0.4em 0 0.7em 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.ai-markdown ul {
+  list-style-type: disc;
+}
+
+.ai-markdown ol {
+  list-style-type: decimal;
+}
+
+.ai-markdown li {
+  line-height: 1.65;
+  padding-left: 0.15em;
+}
+
+.ai-markdown li::marker {
+  color: #AD117E;
+  font-weight: 700;
+}
+
+.ai-markdown li ul,
+.ai-markdown li ol {
+  margin-top: 0.2em;
+  margin-bottom: 0;
+}
+
+.ai-markdown strong {
+  font-weight: 700;
+  color: #7a0d5a;
+}
+
+.ai-markdown em {
+  font-style: italic;
+  color: #5a3060;
+}
+
+.ai-markdown code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.82em;
+  background: rgba(173, 17, 126, 0.09);
+  color: #AD117E;
+  border-radius: 0.3em;
+  padding: 0.15em 0.4em;
+  border: 1px solid rgba(173, 17, 126, 0.15);
+}
+
+.ai-markdown pre {
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(173, 17, 126, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  margin: 0.75em 0;
+}
+
+.ai-markdown pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.875rem;
+  color: #1e293b;
+}
+
+.ai-markdown blockquote {
+  border-left: 3px solid #D385DF;
+  background: rgba(211, 133, 223, 0.1);
+  padding: 0.5em 1em;
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin: 0.75em 0;
+  color: #5a3060;
+  font-style: italic;
+}
+
+.ai-markdown hr {
+  border: none;
+  border-top: 1px solid rgba(173, 17, 126, 0.15);
+  margin: 1em 0;
+}
+
+.ai-markdown a {
+  color: #AD117E;
+  text-decoration: underline;
+  text-decoration-color: rgba(173, 17, 126, 0.4);
+  text-underline-offset: 2px;
+}
+
+.ai-markdown a:hover {
+  text-decoration-color: #AD117E;
+}
